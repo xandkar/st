@@ -13,12 +13,12 @@ X11LIB = /usr/X11R6/lib
 PKG_CONFIG = pkg-config
 
 # includes and libs
-INCS = -I$(X11INC) \
-       `$(PKG_CONFIG) --cflags fontconfig` \
-       `$(PKG_CONFIG) --cflags freetype2`
-LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
-       `$(PKG_CONFIG) --libs fontconfig` \
-       `$(PKG_CONFIG) --libs freetype2`
+INCS = -I. -I/usr/include -I${X11INC} \
+       `pkg-config --cflags fontconfig` \
+       `pkg-config --cflags freetype2`
+LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lrt -lX11 -lutil -lXft -lXrender\
+       `pkg-config --libs fontconfig` \
+       `pkg-config --libs freetype2`
 
 # flags
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
