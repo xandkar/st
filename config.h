@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Terminus:pixelsize=16:antialias=false:autohint=false";
+static char *font = "Terminus:pixelsize=14:antialias=false:autohint=false";
 static int borderpx = 0;
 
 /*
@@ -83,29 +83,29 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-unsigned int alpha = 64;
+unsigned int alpha = 100;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#2c2c2c", /*"black",*/
-	"#705050", /*"red3",*/
-	"#60b48a", /*"green3",*/
-	"#dfaf8f", /*"yellow3",*/
-	"#9ab8d7", /*"blue2",*/
-	"#dc8cc3", /*"magenta3",*/
-	"#8cd0d3", /*"cyan3",*/
-	"#dcdccc", /*"gray90",*/
+	"#2c2c2c", /*  0 normal black   */
+	"#705050", /*  1 normal red     */
+	"#60b48a", /*  2 normal green   */
+	"#dfaf8f", /*  3 normal yellow  */
+	"#9ab8d7", /*  4 normal blue    */
+	"#dc8cc3", /*  5 normal magenta */
+	"#8cd0d3", /*  6 normal cyan    */
+	"#dcdccc", /*  7 normal gray    */
 
 	/* 8 bright colors */
-	"#3f3f3f", /*"gray50",*/
-	"#dca3a3", /*"red",*/
-	"#72d5a3", /*"green",*/
-	"#f0dfaf", /*"yellow",*/
-	"#94bff3", /*"#5c5cff",*/
-	"#ec93d3", /*"magenta",*/
-	"#93e0e3", /*"cyan",*/
-	"#ffffff", /*"white",*/
+	"#3f3f3f", /*  8 bright black   */
+	"#dca3a3", /*  9 bright red     */
+	"#72d5a3", /* 10 bright green   */
+	"#f0dfaf", /* 11 bright yellow  */
+	"#94bff3", /* 12 bright blue    */
+	"#ec93d3", /* 13 bright magenta */
+	"#93e0e3", /* 14 bright cyan    */
+	"#ffffff", /* 15 bright white   */
 
 	[255] = 0,
 
@@ -119,10 +119,11 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 257;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+       unsigned int defaultfg  = 7;
+       unsigned int defaultbg  = 8;
+
+static unsigned int defaultcs  = 7;
+static unsigned int defaultrcs = 8;
 
 /*
  * Default shape of cursor
