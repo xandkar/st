@@ -4,8 +4,10 @@
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+ *
+ * NOTE: autohint=false  results in crashes upon missing glyphs (i.e. emojis)
  */
-static char *font = "Terminus:pixelsize=32:antialias=false:autohint=false";
+static char *font = "Terminus:pixelsize=32:antialias=false:autohint=true";
 static int borderpx = 25;
 
 /*
