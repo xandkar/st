@@ -7,8 +7,10 @@
  *
  * NOTE: autohint=false  results in crashes upon missing glyphs (i.e. emojis)
  */
-static char *font = "Terminus:pixelsize=32:antialias=false:autohint=true";
-static int borderpx = 25;
+
+/* TODO: Consider Xresources to switch between per-DPI configs */
+#include "config_dpi.h"
+#include "config_color_zenburn_dark.h"
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -83,45 +85,6 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
-
-/* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
-	"#242424", /*  0 normal black   */
-	"#705050", /*  1 normal red     */
-	"#87af87", /*  2 normal green   */
-	"#dfaf8f", /*  3 normal yellow  */
-	"#9ab8d7", /*  4 normal blue    */
-	"#dc8cc3", /*  5 normal magenta */
-	"#8cd0d3", /*  6 normal cyan    */
-	"#b2b2a0", /*  7 normal gray    */
-	/* "#dcdccc", */ /*  7 normal gray    */
-
-	/* 8 bright colors */
-	"#222222", /*  8 bright black   */
-	"#dca3a3", /*  9 bright red     */
-	"#72d5a3", /* 10 bright green   */
-	"#f0dfaf", /* 11 bright yellow  */
-	"#94bff3", /* 12 bright blue    */
-	"#ec93d3", /* 13 bright magenta */
-	"#93e0e3", /* 14 bright cyan    */
-	"#ffffff", /* 15 bright white   */
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-};
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
